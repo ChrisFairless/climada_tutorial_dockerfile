@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  climada_tutorial:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: climada_tutorial
+    ports:
+      - "8050:8000"
+
