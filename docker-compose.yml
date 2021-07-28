@@ -8,5 +8,5 @@ services:
       dockerfile: Dockerfile
     container_name: climada_tutorial
     ports:
-      - "8050:8000"
+      - "8888:8888"
 
