@@ -1,13 +1,5 @@
-FROM continuumio/miniconda3
-RUN mkdir /climada
-COPY . /climada
-WORKDIR /climada
-RUN git clone https://github.com/CLIMADA-project/climada_python
-RUN git clone https://github.com/CLIMADA-project/climada_petals
-WORKDIR /climada/climada_python
-RUN conda env update -n base --file requirements/env_climada.yml
+FROM crease/climada
 RUN conda install -c conda-forge jupyterlab
-RUN python setup.py install
 RUN conda clean -afy
 WORKDIR /climada/climada_python/docs
 CMD ["jupyter", "notebook"]
